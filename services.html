@@ -12,8 +12,7 @@
     <header>
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <img src="assets/img/logo.png" alt="Catalistics Logo" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMzNDk4REIiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTIgMmwtNSA1djExYTIgMiAwIDAgMCAyIDJoNmEyIDIgMCAwIDAgMi0yVjdsLTUtNXoiLz48L3N2Zz4='">
-                Cat<span>A</span>listics
+                <img src="assets/img/logo.png" alt="Catalistics Logo">
             </a>
             <button class="mobile-menu-btn" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
@@ -43,15 +42,52 @@
                     <div class="service-text">
                         <h2>Data <span class="highlight">Analytics</span></h2>
                         <p>In today's fast-paced business environment, intuition is not enough. Our data analytics service transforms your raw data into actionable intelligence.</p>
-                        <p>We implement sophisticated analytical models to uncover trends, identify inefficiencies, and forecast future performance. Whether it's customer behavior analysis, operational efficiency, or financial modeling, we provide the clarity you need to make confident, data-driven decisions.</p>
+                        <p>We implement sophisticated analytical models to uncover trends, identify inefficiencies, and forecast future performance. Whether it's customer behaviour analysis, operational efficiency, or financial modelling, we provide the clarity you need to make confident, data-driven decisions.</p>
                         <ul style="margin-top: 1.5rem;">
-                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check highlight" style="margin-right: 10px;"></i> Advanced Predictive Modeling</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check highlight" style="margin-right: 10px;"></i> Advanced Predictive Modelling</li>
                             <li style="margin-bottom: 0.5rem;"><i class="fas fa-check highlight" style="margin-right: 10px;"></i> Interactive Dashboards & Reporting</li>
-                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check highlight" style="margin-right: 10px;"></i> KPI Tracking and Optimization</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check highlight" style="margin-right: 10px;"></i> KPI Tracking and Optimisation</li>
                         </ul>
                     </div>
-                    <div class="service-visual">
-                        <i class="fas fa-chart-pie"></i>
+                    <div class="service-visual" style="padding: 10px;">
+                        <div class="analytics-dashboard">
+                            <div class="a-header">
+                                <div class="a-title">Intelligence Engine</div>
+                                <div class="a-status"><span class="pulse-dot"></span> Live Sync</div>
+                            </div>
+                            
+                            <div class="a-hero-metric">
+                                <span class="a-hero-label">Total Data Processed</span>
+                                <div class="a-hero-value"><span id="a-ticker">4,285,102</span> <span class="a-unit">GB</span></div>
+                                <div class="a-trend highlight"><i class="fas fa-arrow-up"></i> 14.2% since yesterday</div>
+                            </div>
+
+                            <div class="a-charts-row">
+                                <div class="a-box" style="flex: 2;">
+                                    <div class="a-box-title">System Throughput</div>
+                                    <div class="a-bar-chart" id="a-bars">
+                                        <!-- JS will inject bars here -->
+                                    </div>
+                                </div>
+                                <div class="a-box" style="flex: 1;">
+                                    <div class="a-box-title">Model Accuracy</div>
+                                    <div class="a-spark-container">
+                                        <svg viewBox="0 0 100 40" class="a-sparkline">
+                                            <defs>
+                                                <linearGradient id="sparkGrad" x1="0" y1="0" x2="0" y2="1">
+                                                    <stop offset="0%" stop-color="rgba(0,163,224,0.5)" />
+                                                    <stop offset="100%" stop-color="rgba(0,163,224,0)" />
+                                                </linearGradient>
+                                            </defs>
+                                            <path d="M0 40 L 0 35 L 20 20 L 40 25 L 60 10 L 80 15 L 100 5 L 100 40 Z" fill="url(#sparkGrad)" />
+                                            <path d="M0 35 L 20 20 L 40 25 L 60 10 L 80 15 L 100 5" class="a-spark-path" />
+                                            <circle cx="100" cy="5" r="3" class="a-spark-dot" />
+                                        </svg>
+                                        <div class="a-accuracy-val">99.8%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -67,7 +103,16 @@
                         </ul>
                     </div>
                     <div class="service-visual">
-                        <i class="fas fa-laptop-code"></i>
+                        <div class="anim-code-window">
+                            <div class="anim-code-header">
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                            <div class="anim-code-body" id="code-body" style="overflow-y: auto; overflow-x: hidden; flex: 1; display: flex; flex-direction: column;">
+                                <!-- JS will inject lines here -->
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -75,15 +120,177 @@
                     <div class="service-text">
                         <h2>Bespoke <span class="highlight">Data Platforms</span></h2>
                         <p>Stop wrestling with spreadsheets and siloed data. We build tailored data platforms that serve as the single source of truth for your SME.</p>
-                        <p>Our bespoke platforms are designed with user experience in mind, ensuring your team can easily access, query, and visualize the data they need. Built on modern, secure cloud infrastructure, these platforms scale with your business, ensuring you're always ready for the next level of growth.</p>
+                        <p>Our bespoke platforms are designed with user experience in mind, ensuring your team can easily access, query, and visualise the data they need. Built on modern, secure cloud infrastructure, these platforms scale with your business, ensuring you're always ready for the next level of growth.</p>
                         <ul style="margin-top: 1.5rem;">
-                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check highlight" style="margin-right: 10px;"></i> Centralized Data Warehousing</li>
+                            <li style="margin-bottom: 0.5rem;"><i class="fas fa-check highlight" style="margin-right: 10px;"></i> Centralised Data Warehousing</li>
                             <li style="margin-bottom: 0.5rem;"><i class="fas fa-check highlight" style="margin-right: 10px;"></i> Real-time Data Pipelines</li>
                             <li style="margin-bottom: 0.5rem;"><i class="fas fa-check highlight" style="margin-right: 10px;"></i> Secure Cloud Architecture</li>
                         </ul>
                     </div>
-                    <div class="service-visual">
-                        <i class="fas fa-server"></i>
+                    <div class="service-visual" style="padding: 10px; position: relative;">
+                        
+                        <!-- MOCK 1: Operations Dashboard -->
+                        <div class="mock-dash-window mock-view mock-view-1 active">
+                            <div class="mock-dash-header">
+                                <div class="mock-dash-logo">Operations Dashboard</div>
+                                <div class="mock-dash-date">Live</div>
+                            </div>
+                            <div class="mock-dash-body" id="mock-scroll-1">
+                                <div class="mock-dash-content">
+                                    <div class="mock-kpi-grid" style="margin-bottom: 15px;">
+                                        <div class="mock-kpi-card accent">
+                                            <div class="kpi-title">Live Vacancies</div>
+                                            <div class="kpi-value">24</div>
+                                        </div>
+                                        <div class="mock-kpi-card amber">
+                                            <div class="kpi-title">Referrals</div>
+                                            <div class="kpi-value">1,402</div>
+                                        </div>
+                                        <div class="mock-kpi-card green">
+                                            <div class="kpi-title">Active Apps</div>
+                                            <div class="kpi-value">342</div>
+                                        </div>
+                                        <div class="mock-kpi-card purple">
+                                            <div class="kpi-title">To Review</div>
+                                            <div class="kpi-value">18</div>
+                                        </div>
+                                    </div>
+                                    <div class="mock-row-title">Active Pipeline</div>
+                                    <div class="mock-pipeline-grid">
+                                        <div class="app-row glow-amber">
+                                            <div class="app-row-info">
+                                                <div class="app-row-name">John Smith</div>
+                                                <div class="app-row-meta">Smart Meter Installer</div>
+                                            </div>
+                                            <div class="stage-badge stage-new">New Application</div>
+                                        </div>
+                                        <div class="app-row">
+                                            <div class="app-row-info">
+                                                <div class="app-row-name">Sarah Jenkins</div>
+                                                <div class="app-row-meta">Data Analyst</div>
+                                            </div>
+                                            <div class="stage-badge stage-interview">Interview Setup</div>
+                                        </div>
+                                        <div class="app-row glow-red">
+                                            <div class="app-row-info">
+                                                <div class="app-row-name">Michael Chang</div>
+                                                <div class="app-row-meta">Field Engineer</div>
+                                            </div>
+                                            <div class="stage-badge stage-reviewing">Under Review</div>
+                                        </div>
+                                        <div class="app-row">
+                                            <div class="app-row-info">
+                                                <div class="app-row-name">Emma Davies</div>
+                                                <div class="app-row-meta">Team Lead</div>
+                                            </div>
+                                            <div class="stage-badge stage-decision">Decision</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MOCK 2: Office Screen -->
+                        <div class="mock-dash-window mock-view mock-view-2">
+                            <div class="mock-dash-header" style="background: rgba(16,185,129,0.1);">
+                                <div class="mock-dash-logo" style="color: #10B981;">Office Screen</div>
+                                <div class="mock-dash-date">Updated: Just now</div>
+                            </div>
+                            <div class="mock-dash-body" id="mock-scroll-2">
+                                <div class="mock-dash-content">
+                                    <div class="mock-kpi-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
+                                        <div class="mock-office-card">
+                                            <div class="office-stat-title">Client A Staff</div>
+                                            <div class="office-stat-val">14</div>
+                                        </div>
+                                        <div class="mock-office-card">
+                                            <div class="office-stat-title">Client B Staff</div>
+                                            <div class="office-stat-val">8</div>
+                                        </div>
+                                    </div>
+                                    <div class="mock-row-title" style="color: #10B981; border-color: rgba(16,185,129,0.3);">Top Performers</div>
+                                    <div class="mock-leaderboard">
+                                        <div class="leader-row">
+                                            <div class="leader-rank">#1</div>
+                                            <div class="leader-name">Scott</div>
+                                            <div class="leader-bar"><div style="width: 100%; background: #10B981;"></div></div>
+                                            <div class="leader-score">42</div>
+                                        </div>
+                                        <div class="leader-row">
+                                            <div class="leader-rank">#2</div>
+                                            <div class="leader-name">Richard</div>
+                                            <div class="leader-bar"><div style="width: 80%; background: #00A3E0;"></div></div>
+                                            <div class="leader-score">34</div>
+                                        </div>
+                                        <div class="leader-row">
+                                            <div class="leader-rank">#3</div>
+                                            <div class="leader-name">Mike</div>
+                                            <div class="leader-bar"><div style="width: 65%; background: #8B5CF6;"></div></div>
+                                            <div class="leader-score">28</div>
+                                        </div>
+                                        <div class="leader-row">
+                                            <div class="leader-rank">#4</div>
+                                            <div class="leader-name">Emma</div>
+                                            <div class="leader-bar"><div style="width: 45%; background: #F59E0B;"></div></div>
+                                            <div class="leader-score">19</div>
+                                        </div>
+                                        <div class="leader-row">
+                                            <div class="leader-rank">#5</div>
+                                            <div class="leader-name">James</div>
+                                            <div class="leader-bar"><div style="width: 30%; background: #EF4444;"></div></div>
+                                            <div class="leader-score">12</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MOCK 3: Scheduling -->
+                        <div class="mock-dash-window mock-view mock-view-3">
+                            <div class="mock-dash-header" style="background: rgba(139,92,246,0.1);">
+                                <div class="mock-dash-logo" style="color: #8B5CF6;">Scheduling Engine</div>
+                                <div class="mock-dash-date">Live</div>
+                            </div>
+                            <div class="mock-dash-body" id="mock-scroll-3">
+                                <div class="mock-dash-content">
+                                    <div class="mock-schedule-grid">
+                                        <div class="schedule-row">
+                                            <div class="sched-avatar">JD</div>
+                                            <div class="sched-track">
+                                                <div class="sched-job" style="left: 10%; width: 30%; background: rgba(16,185,129,0.2); border-left-color: #10B981;">JOB-1029</div>
+                                                <div class="sched-job" style="left: 45%; width: 20%; background: rgba(0,163,224,0.2); border-left-color: #00A3E0;">JOB-1030</div>
+                                            </div>
+                                        </div>
+                                        <div class="schedule-row">
+                                            <div class="sched-avatar">SW</div>
+                                            <div class="sched-track">
+                                                <div class="sched-job" style="left: 20%; width: 40%; background: rgba(245,158,11,0.2); border-left-color: #F59E0B;">JOB-1031</div>
+                                            </div>
+                                        </div>
+                                        <div class="schedule-row">
+                                            <div class="sched-avatar">MR</div>
+                                            <div class="sched-track">
+                                                <div class="sched-job" style="left: 5%; width: 25%; background: rgba(239,68,68,0.2); border-left-color: #EF4444;">JOB-1032</div>
+                                                <div class="sched-job" style="left: 35%; width: 50%; background: rgba(139,92,246,0.2); border-left-color: #8B5CF6;">JOB-1033</div>
+                                            </div>
+                                        </div>
+                                        <div class="schedule-row">
+                                            <div class="sched-avatar">TJ</div>
+                                            <div class="sched-track">
+                                                <div class="sched-job" style="left: 15%; width: 70%; background: rgba(16,185,129,0.2); border-left-color: #10B981;">JOB-1034</div>
+                                            </div>
+                                        </div>
+                                        <div class="schedule-row">
+                                            <div class="sched-avatar">LC</div>
+                                            <div class="sched-track">
+                                                <div class="sched-job" style="left: 30%; width: 30%; background: rgba(0,163,224,0.2); border-left-color: #00A3E0;">JOB-1035</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
@@ -96,7 +303,9 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
-                    <a href="index.html" class="logo" style="margin-bottom: 1rem;">Cat<span>A</span>listics</a>
+                    <a href="index.html" class="logo" style="margin-bottom: 1rem;">
+                        <img src="assets/img/logo.png" alt="Catalistics Logo">
+                    </a>
                     <p style="font-size: 0.9rem;">Data. Insight. Impact.<br>Empowering SMEs through innovative data solutions.</p>
                 </div>
                 <div class="footer-col">
@@ -122,5 +331,111 @@
     </footer>
 
     <script src="assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Coding Animation (50 lines)
+            const codeLines = [
+                "> import pandas as pd", "> import numpy as np", "> from sklearn.ensemble import RandomForestRegressor",
+                "> data = pd.read_csv('sme_metrics.csv')", "> data.head()", "> data.fillna(method='ffill', inplace=True)",
+                "> X = data.drop('revenue_growth', axis=1)", "> y = data['revenue_growth']",
+                "> from sklearn.model_selection import train_test_split", "> X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)",
+                "> model = RandomForestRegressor(n_estimators=100)", "> model.fit(X_train, y_train)",
+                "> predictions = model.predict(X_test)", "> from sklearn.metrics import mean_squared_error",
+                "> mse = mean_squared_error(y_test, predictions)", "> print(f'Model MSE: {mse}')",
+                "> # Optimising hyper-parameters...", "> from sklearn.model_selection import GridSearchCV",
+                "> param_grid = {'n_estimators': [50, 100, 200], 'max_depth': [None, 10, 20]}",
+                "> grid_search = GridSearchCV(model, param_grid, cv=5)", "> grid_search.fit(X_train, y_train)",
+                "> best_model = grid_search.best_estimator_", "> # Deploying model to production...",
+                "> import joblib", "> joblib.dump(best_model, 'sme_growth_model.pkl')",
+                "> print('Model deployed successfully.')", "> def predict_growth(new_data):",
+                ">     return best_model.predict(new_data)", "> # Connecting to live data stream...",
+                "> import websocket", "> ws = websocket.WebSocket()",
+                "> ws.connect('wss://api.catalistics.co.uk/stream')", "> while True:",
+                ">     result = ws.recv()", ">     processed = preprocess(result)",
+                ">     growth = predict_growth(processed)", ">     if growth > 0.05:",
+                ">         trigger_alert('High growth potential detected!')", ">     else:",
+                ">         log_activity('Normal operations.')", "> # Generating report...",
+                "> import matplotlib.pyplot as plt", "> plt.plot(predictions)",
+                "> plt.title('Revenue Forecast')", "> plt.savefig('forecast.png')",
+                "> print('Report generated: forecast.png')", "> # System health check...",
+                "> import psutil", "> cpu = psutil.cpu_percent()",
+                "> print(f'CPU Usage: {cpu}%')", "> # Shutting down safely."
+            ];
+
+            const codeBody = document.getElementById('code-body');
+            if(codeBody) {
+                let lineIndex = 0;
+                setInterval(() => {
+                    if(lineIndex >= codeLines.length) {
+                        codeBody.innerHTML = ''; 
+                        lineIndex = 0;
+                    }
+                    const newLine = document.createElement('div');
+                    newLine.className = 'anim-code-line l1';
+                    newLine.textContent = codeLines[lineIndex];
+                    newLine.style.animation = 'typing 0.5s steps(30, end) forwards';
+                    newLine.style.marginBottom = '2px';
+                    codeBody.appendChild(newLine);
+                    codeBody.scrollTop = codeBody.scrollHeight;
+                    lineIndex++;
+                }, 800);
+            }
+
+            // Mock View Carousel & Auto-scroll
+            const mockViews = document.querySelectorAll('.mock-view');
+            const mockScrolls = [
+                document.getElementById('mock-scroll-1'),
+                document.getElementById('mock-scroll-2'),
+                document.getElementById('mock-scroll-3')
+            ];
+            
+            if(mockViews.length > 0) {
+                let currentView = 0;
+                
+                // Crossfade every 6 seconds
+                setInterval(() => {
+                    mockViews[currentView].classList.remove('active');
+                    currentView = (currentView + 1) % mockViews.length;
+                    mockViews[currentView].classList.add('active');
+                    
+                    // Reset scroll for the new view (if relying on CSS animation, reset animation by re-adding class, but it runs on its own anyway)
+                }, 6000);
+            }
+
+            // Advanced Analytics Dashboard Animations
+            const ticker = document.getElementById('a-ticker');
+            if (ticker) {
+                let val = 4285102;
+                setInterval(() => {
+                    val += Math.floor(Math.random() * 15) + 1;
+                    ticker.textContent = val.toLocaleString();
+                }, 1200);
+            }
+
+            const aBars = document.getElementById('a-bars');
+            if (aBars) {
+                // Initialize bars
+                for (let i = 0; i < 15; i++) {
+                    const bar = document.createElement('div');
+                    bar.className = 'a-bar';
+                    bar.style.height = (Math.random() * 80 + 20) + '%';
+                    aBars.appendChild(bar);
+                }
+                
+                // Animate bars
+                setInterval(() => {
+                    const bars = aBars.querySelectorAll('.a-bar');
+                    bars.forEach(bar => {
+                        // Randomly adjust height slightly
+                        let currentHeight = parseFloat(bar.style.height);
+                        let newHeight = currentHeight + (Math.random() * 20 - 10);
+                        if (newHeight > 100) newHeight = 100;
+                        if (newHeight < 10) newHeight = 10;
+                        bar.style.height = newHeight + '%';
+                    });
+                }, 1500);
+            }
+        });
+    </script>
 </body>
 </html>
